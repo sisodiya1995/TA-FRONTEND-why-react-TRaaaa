@@ -1,0 +1,19 @@
+<div id="root"></div>
+    <script type="text/babel">
+      let card = (
+        <>
+          <button label="Button" disabled>Button</button>
+          <button size="small" label="Button" type="secondary" >Button</button>
+          <button
+            size="large"
+            label="Button"
+            type="tertiary"
+            onClick={() => alert("You Clicked Me!")}
+          > Button</button>
+        </>
+      );
+
+      ReactDOM.render(card, document.getElementById("root"));
+    </script>
+  </body>
+</html>
