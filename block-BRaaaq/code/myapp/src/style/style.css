@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header, footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0px;
+}
+ul{
+    display: flex;
+}
+li{
+    margin-left: 10px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    width: 400px;
+    border-radius: 3px;
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 30px 0px;
+}
+.article{
+    width: 400px;
+    margin-top: 20px;
+}

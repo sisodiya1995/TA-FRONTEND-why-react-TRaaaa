@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Article Card Jsx</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function handleClick(event) {
+        //console.log(event.path[0].innerText)
+        let name = event.path[0].innerText;
+        alert(`Hello ${name}`);
+      }
+
+      let cardInfo = {
+        title: "City Lights in New York",
+        date: new Date("2017-01-26"),
+        comments: 67,
+        subTitle: "The city that never sleeps.",
+        description:
+          "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+        category: "photos",
+        imageURL:
+          "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      };
+
+      let fruits = [
+        { id: "apple", value: "🍎 apple" },
+        { id: "orange", value: "🍊 orange" },
+        { id: "grape", value: "🍇 grape" },
+        { id: "pear", value: "🍐 pear" },
+      ];
+      let card = (
+        <div className="article">
+          <span className="category">{cardInfo.category}</span>
+          <img src={cardInfo.imageURL} />
+          <date className="date">27 - MAR</date>
+          <p className="title">{cardInfo.title}</p>
+          <p className="sub-title">{cardInfo.subTitle}</p>
+          <p className="description">{cardInfo.description}</p>
+          <div className="com-age">
+            <span>6 min ago</span>
+            <p>{cardInfo.comments} Comments</p>
+          </div>
+          <button onClick={() => alert("Hello React Event")}>ClickMe</button>
+          <br />
+          <button
+            onClick={() => {
+              alert("To learn React use https://reactjs.org");
+              alert("React and ReactDOM works together");
+              alert("Babel helps in writing JSX");
+            }}
+          >
+            How can I help you?
+          </button>
+
+          <button
+            onClick={() => {
+              handleClick(event);
+            }}
+          >
+            Arya
+          </button>
+          <button
+            onClick={() => {
+              handleClick(event);
+            }}
+          >
+            Jhon
+          </button>
+          <button
+            onClick={() => {
+              handleClick(event);
+            }}
+          >
+            Bran
+          </button>
+
+          {fruits.map((fruit) => {
+            return (
+              <button
+                onClick={() => {
+                  handleClick(event);
+                }}
+              >
+                {fruit.value}
+              </button>
+            );
+          })}
+        </div>
+      );
+
+      ReactDOM.render(card, document.getElementById("root"));
+    </script>
+  </body>
+</html>
